@@ -6,7 +6,7 @@ import { convert } from "./convert.js";
 import type { StoryblokComponent } from "./types.js";
 
 // ---------------------------------------------------------------------------
-// CLI — sb-bac generate | import
+// CLI — npx sb-bac generate | import
 // ---------------------------------------------------------------------------
 
 async function main() {
@@ -44,7 +44,7 @@ async function main() {
       if (!inputFile) {
         console.error(
           "Error: Missing input file.\n" +
-            "Usage: sb-bac import <components.json> [output-dir]\n\n" +
+            "Usage: npx sb-bac import <components.json> [output-dir]\n\n" +
             "Pull first with the Storyblok CLI:\n" +
             "  storyblok components pull --space <id>",
         );
@@ -141,21 +141,20 @@ function isComponent(value: unknown): value is StoryblokComponent {
 
 function printHelp() {
   console.log(`
-sb-bac — Storyblok Bloks-as-Code
+npx sb-bac — Storyblok Bloks-as-Code
 
 Usage:
-  sb-bac generate --space <id>
-  sb-bac import <components.json> [output-dir]
+  npx sb-bac generate --space <id>
+  npx sb-bac import <components.json> [output-dir]
 
 Workflow (code → Storyblok):
   1. Define components in bloks/*.ts using defineComponent()
-  2. npm run build
-  3. sb-bac generate --space <id>
-  4. storyblok components push --space <id>
+  2. npx sb-bac generate --space <id>
+  3. storyblok components push --space <id>
 
 Workflow (Storyblok → code):
   1. storyblok components pull --space <id>
-  2. sb-bac import .storyblok/components/<id>/components.json
+  2. npx sb-bac import .storyblok/components/<id>/components.json
 
 Commands:
   generate     Convert typed .ts definitions → Storyblok CLI JSON
