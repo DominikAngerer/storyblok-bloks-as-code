@@ -12,7 +12,15 @@ Define Storyblok components as fully-typed TypeScript files, then generate Story
 ## Install
 
 ```bash
-npm install -D github:DominikAngerer/storyblok-bloks-as-code
+npm install -D github:DominikAngerer/storyblok-bloks-as-code typescript
+```
+
+This package uses ES modules. Make sure your `package.json` includes:
+
+```json
+{
+  "type": "module"
+}
 ```
 
 ## Quick start
@@ -71,7 +79,34 @@ Create a barrel export:
 export { hero } from "./hero.js";
 ```
 
-### 2. Generate JSON
+### 2. Compile TypeScript
+
+Add a `tsconfig.json` to your project root:
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2024",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "dist",
+    "rootDir": ".",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["bloks"],
+  "exclude": ["node_modules", "dist"]
+}
+```
+
+Then compile:
+
+```bash
+npx tsc
+```
+
+### 3. Generate JSON
 
 ```bash
 npx sb-bac generate --space <your-space-id>
@@ -87,7 +122,7 @@ This writes Storyblok CLI-compatible files to `.storyblok/components/<space-id>/
   tags.json
 ```
 
-### 3. Push to Storyblok
+### 4. Push to Storyblok
 
 ```bash
 storyblok components push --space <your-space-id>
