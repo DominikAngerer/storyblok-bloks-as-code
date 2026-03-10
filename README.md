@@ -7,7 +7,7 @@ Define Storyblok components as fully-typed TypeScript files, then generate Story
 - **Type safety** — every field type, option, and config property is typed
 - **Version control** — component schemas live in your repo, reviewable in PRs
 - **No vendor lock-in** — uses the official [Storyblok CLI](https://www.storyblok.com/docs/libraries/storyblok-cli) for all API communication
-- **Zero runtime dependencies**
+- **Zero runtime dependencies** — only TypeScript as a build dependency
 
 ## Install
 
@@ -71,10 +71,9 @@ Create a barrel export:
 export { hero } from "./hero.js";
 ```
 
-### 2. Build & generate JSON
+### 2. Generate JSON
 
 ```bash
-npm run build
 sb-bac generate --space <your-space-id>
 ```
 
