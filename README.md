@@ -12,7 +12,7 @@ Define Storyblok components as fully-typed TypeScript files, then generate Story
 ## Install
 
 ```bash
-npm install storyblok-bloks-as-code
+npm install github:DominikAngerer/storyblok-bloks-as-code
 ```
 
 ## Quick start
