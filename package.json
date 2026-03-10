@@ -1,0 +1,35 @@
+{
+  "name": "storyblok-bloks-as-code",
+  "version": "1.0.0",
+  "description": "Define Storyblok components as typed JavaScript and generate Storyblok CLI-compatible JSON",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    }
+  },
+  "bin": {
+    "sb-bac": "./dist/src/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "generate": "node dist/src/cli.js generate",
+    "import": "node dist/src/cli.js import",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "storyblok",
+    "cms",
+    "components",
+    "bloks-as-code"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^25.4.0",
+    "typescript": "^5.9.3"
+  }
+}
