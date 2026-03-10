@@ -74,7 +74,7 @@ export { hero } from "./hero.js";
 ### 2. Generate JSON
 
 ```bash
-sb-bac generate --space <your-space-id>
+npx sb-bac generate --space <your-space-id>
 ```
 
 This writes Storyblok CLI-compatible files to `.storyblok/components/<space-id>/`:
@@ -99,7 +99,7 @@ Pull your existing components and convert them to typed `.ts` files:
 
 ```bash
 storyblok components pull --space <your-space-id>
-sb-bac import .storyblok/components/<space-id>/components.json ./bloks
+npx sb-bac import .storyblok/components/<space-id>/components.json ./bloks
 ```
 
 This generates one `.ts` file per component plus a barrel `index.ts`.
@@ -107,8 +107,8 @@ This generates one `.ts` file per component plus a barrel `index.ts`.
 ## CLI reference
 
 ```
-sb-bac generate --space <id>     # Convert .ts definitions → Storyblok CLI JSON
-sb-bac import <file> [output-dir] # Convert Storyblok JSON → typed .ts definitions
+npx sb-bac generate --space <id>     # Convert .ts definitions → Storyblok CLI JSON
+npx sb-bac import <file> [output-dir] # Convert Storyblok JSON → typed .ts definitions
 ```
 
 The space ID can also be set via the `STORYBLOK_SPACE_ID` environment variable.
