@@ -15,6 +15,7 @@
     "sb-bac": "./dist/src/cli.js"
   },
   "scripts": {
+    "prepare": "tsc",
     "build": "tsc",
     "generate": "node dist/src/cli.js generate",
     "import": "node dist/src/cli.js import",
