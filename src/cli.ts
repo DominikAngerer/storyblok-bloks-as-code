@@ -21,7 +21,7 @@ async function main() {
     case "generate": {
       const spaceId = getSpaceId(args);
       const components = await loadComponents();
-      const outputDir = args.find((a) => !a.startsWith("--")) ?? undefined;
+      const outputDir = args.find((a, i) => !a.startsWith("--") && args[i - 1] !== "--space") ?? undefined;
 
       console.log(
         `\nGenerating Storyblok CLI files for ${components.length} component(s)...\n`,
