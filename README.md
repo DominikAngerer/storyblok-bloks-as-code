@@ -1,4 +1,6 @@
-# storyblok-bloks-as-code
+# Now available via: https://github.com/storyblok/monoblok/tree/main/packages/schema
+
+# [DEPRECATED] storyblok-bloks-as-code
 
 Define Storyblok components as fully-typed TypeScript files, then generate Storyblok CLI-compatible JSON to push them to your space. Also supports the reverse: convert a pulled `components.json` back into typed `.ts` definitions.
 
